@@ -39,7 +39,7 @@ public class HisaabTemplateApp extends ForceApp {
 
 	@Override
 	public Class<? extends Activity> getMainActivityClass() {
-		return MainActivity.class;
+		return SplashActivity.class;
 	}
 	
 	@Override
