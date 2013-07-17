@@ -135,13 +135,16 @@ public class MainActivity extends Activity {
 						   {
 							Map<String, Object> fields = new HashMap<String, Object>();
 							fields.put("Amount__c",amt.toString());
-							fields.put("Date_And_Time__c",d);
+							fields.put("Date_And_Time__c",d.toGMTString());
 							fields.put("Details__c", detail.toString());
 							fields.put("Name__c", selectedName);
-							fields.put("Serial_Number__c","");
+							//fields.put("Serial_Number__c","");
 							RestRequest request = null;
+							//RestRequest request2 = null;
 							try {
-								request = RestRequest.getRequestForUpdate(apiVersion, objectType,"",fields);
+								request = RestRequest.getRequestForCreate(apiVersion, objectType,fields);
+								//String q = "";
+								//request2 = RestRequest.getRequestForQuery(apiVersion, q);
 							} catch (Exception e) {
 								e.printStackTrace();
 								return;
